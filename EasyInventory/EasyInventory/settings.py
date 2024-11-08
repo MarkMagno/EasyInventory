@@ -78,6 +78,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'django_db',          # Matches POSTGRES_DB
+        'USER': 'django_user',        # Matches POSTGRES_USER
+        'PASSWORD': 'django_password', # Matches POSTGRES_PASSWORD
+        'HOST': 'db',                # Service name in docker-compose.yml
+        'PORT': '5432',              # Default PostgreSQL port
     }
 }
 
