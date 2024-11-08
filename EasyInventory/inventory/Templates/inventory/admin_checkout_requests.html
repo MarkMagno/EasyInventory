@@ -20,7 +20,7 @@
             <td>{{ request.use_case }}</td>
             <td>{{ request.date_needed_until }}</td>
             <td>
-                <form method="post" action=".">
+                <form method="post" action="{% url 'checkout_requests' %}">
                     {% csrf_token %}
                     <input type="hidden" name="request_id" value="{{ request.id }}">
                     <button type="submit" name="action" value="approve">Approve</button>
