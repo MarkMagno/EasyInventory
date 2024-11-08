@@ -1,0 +1,38 @@
+{% extends "inventory/base.html" %}
+
+{% block content %}
+<h2>Checkout Requests</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Equipment</th>
+            <th>Use Case</th>
+            <th>Date Needed Until</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for request in requests %}
+        <tr>
+            <td>{{ request.user.username }}</td>
+            <td>{{ request.equipment.model_number }}</td>
+            <td>{{ request.use_case }}</td>
+            <td>{{ request.date_needed_until }}</td>
+            <td>
+                <form method="post" action=".">
+                    {% csrf_token %}
+                    <input type="hidden" name="request_id" value="{{ request.id }}">
+                    <button type="submit" name="action" value="approve">Approve</button>
+                    <button type="submit" name="action" value="deny">Deny</button>
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No pending requests.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
