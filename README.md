@@ -62,7 +62,6 @@ To launch and start using EasyInventory:
 
 The MIT License (MIT)
 
-```plaintext
 MIT License
 
 Copyright (c) Mark Magno [2024]
