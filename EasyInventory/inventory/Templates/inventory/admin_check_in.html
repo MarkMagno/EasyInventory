@@ -20,7 +20,7 @@
             <td>{{ item.due_date }}</td>
             <td>{{ item.checked_out_to.username }}</td>
             <td>
-                <form method="post" action=".">
+                <form method="post" action="{% url 'check_in' %}">
                     {% csrf_token %}
                     <input type="hidden" name="equipment_id" value="{{ item.id }}">
                     <button type="submit">Check In</button>
