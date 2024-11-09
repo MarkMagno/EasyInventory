@@ -12,6 +12,8 @@ def is_admin(user):
 
 ### Admin Views ###
 
+## Login functionality not working commented out for now
+
 # Admin view to list all equipment and handle search functionality
 ##@login_required
 ##@user_passes_test(is_admin)
