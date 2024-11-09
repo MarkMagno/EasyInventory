@@ -61,7 +61,7 @@ By clearly defining user stories, acceptance criteria, misuser stories, and miti
 
 ## **Context Diagram**
 
-![Context Diagram]("docs/images/ProjectContextDiagram.png")
+![Context Diagram](docs/images/ProjectContextDiagram.png)
 
 ## **Container Diagram**
 
