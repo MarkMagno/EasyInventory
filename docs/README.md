@@ -55,3 +55,18 @@ Misuser stories help identify potential ways the application might be misused an
 ## **Conclusion**
 By clearly defining user stories, acceptance criteria, misuser stories, and mitigation strategies, EasyInventory ensures a robust and user-friendly experience while safeguarding against potential misuse.
 
+#Diagrams
+
+##Mockup
+
+##Context Diagram
+
+![Context Diagram](docs/images/ProjectContextDiagram.png)
+
+##Container Diagram
+
+![Container Diagram](docs/images/ProjectContainerDiagram.png)
+
+##Component Diagram
+
+![Component Diagram](docs/images/ProjectComponentDiagram.png)
