@@ -71,7 +71,7 @@ By clearly defining user stories, acceptance criteria, misuser stories, and miti
 
 ## **Admin Equipment Approve Page**
 
-![Equipment Approve Page](images/EquipmentApprovePage.png)
+![Admin Equipment Approve Page](images/AdminEquipmentApprovePage.png)
 
 ## **User Page**
 
