@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyInventory</title>
+</head>
+<body>
+    <header>
+        <h1>EasyInventory</h1>
+        <nav>
+            <a href="{% url 'admin_inventory' %}">Inventory</a> |
+            <a href="{% url 'admin_users' %}">Users</a> |
+            <a href="{% url 'new_equipment' %}">Add Equipment</a> |
+            <a href="{% url 'checkout_requests' %}">Checkout Requests</a> |
+            <a href="{% url 'check_in' %}">Check-In</a> |
+            <a href="{% url 'user_equipment' %}">My Equipment</a> |
+            <a href="{% url 'user_checkout' %}">Request Checkout</a>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <hr>
+        <p>&copy; 2024 EasyInventory</p>
+    </footer>
+</body>
+</html>
