@@ -77,11 +77,10 @@ WSGI_APPLICATION = 'EasyInventory.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': 'django_db',          # Matches POSTGRES_DB
-        'USER': 'django_user',        # Matches POSTGRES_USER
-        'PASSWORD': 'django_password', # Matches POSTGRES_PASSWORD
-        'HOST': 'db',                # Service name in docker-compose.yml
+        'NAME': 'easyinventory-db',          # Matches cloud DB
+        'USER': 'postgres',        # Default user
+        'PASSWORD': 'SDqNrtA)p+X-tX}o', # Matches cloud password
+        'HOST': '35.238.135.148',                # public IP
         'PORT': '5432',              # Default PostgreSQL port
     }
 }
