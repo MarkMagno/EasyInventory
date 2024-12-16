@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q4&-wr3g1e1qlyam+*)h2(p=u*j!f^v4^y7ny!_bj(65qsj$)='
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'default-fallback-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',  # For local testing
+    'localhost',
+    'easyinventory-444902.uc.r.appspot.com',
+]
 
 
 # Application definition
@@ -55,7 +60,7 @@ ROOT_URLCONF = 'EasyInventory.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'inventory' / 'Templates' / 'inventory'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,12 +81,11 @@ WSGI_APPLICATION = 'EasyInventory.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': 'django_db',          # Matches POSTGRES_DB
-        'USER': 'django_user',        # Matches POSTGRES_USER
-        'PASSWORD': 'django_password', # Matches POSTGRES_PASSWORD
-        'HOST': 'db',                # Service name in docker-compose.yml
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'easyinventory-db',          # Matches cloud DB
+        'USER': 'postgres',        # Default user
+        'PASSWORD': 'SDqNrtA)p+X-tX}o', # Matches cloud password
+        'HOST': '35.238.135.148',                # public IP
         'PORT': '5432',              # Default PostgreSQL port
     }
 }
@@ -121,7 +125,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+##STATICFILES_DIRS = [BASE_DIR / "inventory" / "static"]
+
+LOGIN_URL = '/login/'  # Adjust this path as necessary
+LOGIN_REDIRECT_URL = '/'  # Adjust this for post-login redirection
+LOGOUT_REDIRECT_URL = '/login/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
