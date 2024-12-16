@@ -32,7 +32,7 @@ To set up **EasyInventory** locally, follow these steps:
 
 4. Create a superuser to manage the application:
    ```bash
-   docker-compose run web python manage.py createsuperuser
+   docker-compose exec web python manage.py createsuperuserwithprofile
    ```
 
 ---
