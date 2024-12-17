@@ -47,7 +47,7 @@ To launch and start using EasyInventory:
    ```
 
 2. Open your web browser and navigate to:
-   - **Application Home**: [http://localhost:8000](http://localhost:8000)
+   - **Application Home**: [http://localhost:8000/administrator/inventory](http://localhost:8000/administrator/inventory)
    - **Admin Dashboard**: [http://localhost:8000/admin](http://localhost:8000/admin)
 
 3. Log in using the superuser credentials you created during the installation process.
