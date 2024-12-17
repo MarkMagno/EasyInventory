@@ -1,5 +1,3 @@
-serviceAccount: cloud-build-sa@easyinventory-445002.iam.gserviceaccount.com
-
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '--no-cache', '-t', 'gcr.io/$PROJECT_ID/django-app', '-f', 'Dockerfile', '.']
