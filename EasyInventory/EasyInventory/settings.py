@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-q4&-wr3g1e1qlyam+*)h2(p=u*j!f^v4^y7ny!_bj(65qsj$)=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',  # For local testing
+    'localhost',
+    'easyinventory-444902.uc.r.appspot.com',
+]
 
 
 # Application definition
