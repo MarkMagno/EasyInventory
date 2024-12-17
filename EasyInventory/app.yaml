@@ -10,4 +10,4 @@ handlers:
 
 env_variables:
     DJANGO_SECRET_KEY: "your-secret-key"
-    ALLOWED_HOSTS: "easyinventory-445001.uc.r.appspot.com"
+    ALLOWED_HOSTS: ""
