@@ -9,5 +9,5 @@ handlers:
   script: auto
 
 env_variables:
-    DJANGO_SECRET_KEY: "Secret-Key"
+    DJANGO_SECRET_KEY: "-l5kmkljlzk&^t+dt82xp=w%4cv!)23u5s1ouhuks6p3l^i4*h"
     ALLOWED_HOSTS: ""
