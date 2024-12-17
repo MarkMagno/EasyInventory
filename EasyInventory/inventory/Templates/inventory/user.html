@@ -1,0 +1,54 @@
+{% extends "inventory/user_base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Welcome, {{ user.username }}</h2>
+            <p>Here is the list of equipment you have checked out:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Asset Number</th>
+                        <th>Model Number</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in equipment %}
+                    <tr>
+                        <td>{{ item.asset_number }}</td>
+                        <td>{{ item.model_number }}</td>
+                        <td>{{ item.due_date|default:"N/A" }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3">No equipment checked out.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <section>
+                <h2>Request New Equipment</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Submit Request</button>
+                </form>
+            </section>
+            
+        </section>
+    </main>
+</body>
+</html>
+{% endblock %}
