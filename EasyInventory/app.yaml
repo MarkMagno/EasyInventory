@@ -9,5 +9,5 @@ handlers:
   script: auto
 
 env_variables:
-    DJANGO_SECRET_KEY: "your-secret-key"
+    DJANGO_SECRET_KEY: "django-insecure-q4&-wr3g1e1qlyam+*)h2(p=u*j!f^v4^y7ny!_bj(65qsj$)="
     ALLOWED_HOSTS: ""
