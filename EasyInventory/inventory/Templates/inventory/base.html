@@ -1,30 +1,30 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyInventory</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'inventory/styles.css' %}">
 </head>
 <body>
-    <header class="bg-success text-white py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1>EasyInventory</h1>
-            <nav>
-                <a href="{% url 'admin_inventory' %}" class="text-white me-3">Inventory</a>
-                <a href="{% url 'admin_users' %}" class="text-white me-3">Users</a>
-                <a href="{% url 'new_equipment' %}" class="text-white me-3">Add Equipment</a>
-                <a href="{% url 'checkout_requests' %}" class="text-white me-3">Checkout Requests</a>
-                <a href="{% url 'check_in' %}" class="text-white">Check-In</a>
-                <a href="{% url 'user' %}" class="text-white">User View</a>
-            </nav>
-        </div>
+    <header>
+        <h1>EasyInventory</h1>
+        <nav>
+            <a href="{% url 'admin_inventory' %}">Inventory</a> |
+            <a href="{% url 'admin_users' %}">Users</a> |
+            <a href="{% url 'new_equipment' %}">Add Equipment</a> |
+            <a href="{% url 'checkout_requests' %}">Checkout Requests</a> |
+            <a href="{% url 'check_in' %}">Check-In</a> |
+            <a href="{% url 'user_equipment' %}">My Equipment</a> |
+            <a href="{% url 'user_checkout' %}">Request Checkout</a>
+        </nav>
+        <hr>
     </header>
-
-    <main class="container py-4">
+    <main>
         {% block content %}{% endblock %}
     </main>
+    <footer>
+        <hr>
+        <p>&copy; 2024 EasyInventory</p>
+    </footer>
 </body>
 </html>

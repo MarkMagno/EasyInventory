@@ -8,7 +8,6 @@ urlpatterns = [
     path('administrator/check_out', views.checkout_requests, name='checkout_requests'),
     path('administrator/check_in', views.check_in, name='check_in'),
     path('administrator/user_action/<int:user_id>', views.user_action, name='user_action'),  # User actions
-    path('user/', views.user_page, name='user'),
-    path('login/', views.login_view, name='login_view'),
-    path('', views.login_view, name='default_login_view'),
+    path('user/equipment', views.user_equipment, name='user_equipment'),
+    path('user/checkout', views.user_checkout, name='user_checkout'),
 ]
