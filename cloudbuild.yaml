@@ -1,10 +1,14 @@
-steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/django-app', '.']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/django-app']
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', '--image-url', 'gcr.io/$PROJECT_ID/django-app']
+serviceAccount: cloud-build-sa@easyinventory-445002.iam.gserviceaccount.com
 
-images:
-- 'gcr.io/$PROJECT_ID/django-app'
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '--no-cache', '-t', 'gcr.io/$PROJECT_ID/django-app', '-f', 'Dockerfile', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/django-app']
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', '--image-url', 'gcr.io/$PROJECT_ID/django-app']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
