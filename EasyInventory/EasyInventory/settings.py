@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'EasyInventory.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'easyinventory-444902:us-central1:easyinventory-db',          # Matches cloud DB
+        'NAME': 'easyinventory-db',          # Matches cloud DB
         'USER': 'postgres',        # Default user
         'PASSWORD': 'SDqNrtA)p+X-tX}o', # Matches cloud password
         'HOST': '35.238.135.148',                # public IP
