@@ -1,5 +1,5 @@
 runtime: python39
-entrypoint: gunicorn -b :$PORT your_project_name.wsgi:application
+entrypoint: gunicorn -b :$PORT EasyInventory.wsgi:application
 
 handlers:
 - url: /static
